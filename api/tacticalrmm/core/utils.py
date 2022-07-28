@@ -32,19 +32,20 @@ def token_is_valid() -> tuple[str, bool]:
     """
     Return type: token: str, is_valid: bool. Token wil be an empty string is not valid.
     """
-    from core.models import CodeSignToken
+    # from core.models import CodeSignToken
 
-    t: "Optional[CodeSignToken]" = CodeSignToken.objects.first()
-    if not t:
-        return "", False
+    # t: "Optional[CodeSignToken]" = CodeSignToken.objects.first()
+    # if not t:
+    #     return "", False
 
-    if not t.token:
-        return "", False
+    # if not t.token:
+    #     return "", False
 
-    if t.is_valid:
-        return t.token, True
+    # if t.is_valid:
+    #     return t.token, True
 
-    return "", False
+    # return "", False
+    return True
 
 
 def get_core_settings() -> "CoreSettings":

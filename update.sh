@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 SCRIPT_VERSION="138"
-SCRIPT_URL='https://raw.githubusercontent.com/amidaware/tacticalrmm/master/update.sh'
-LATEST_SETTINGS_URL='https://raw.githubusercontent.com/amidaware/tacticalrmm/master/api/tacticalrmm/tacticalrmm/settings.py'
+SCRIPT_URL='https://raw.githubusercontent.com/framatt/tacticalrmm/master/update.sh'
+LATEST_SETTINGS_URL='https://raw.githubusercontent.com/framatt/tacticalrmm/master/api/tacticalrmm/tacticalrmm/settings.py'
 YELLOW='\033[1;33m'
 GREEN='\033[0;32m'
 RED='\033[0;31m'
@@ -281,7 +281,7 @@ git pull
 if [[ ! -d ${SCRIPTS_DIR} ]]; then
   sudo mkdir -p ${SCRIPTS_DIR}
   sudo chown ${USER}:${USER} ${SCRIPTS_DIR}
-  git clone https://github.com/amidaware/community-scripts.git ${SCRIPTS_DIR}/
+  git clone https://github.com/framatt/community-scripts.git ${SCRIPTS_DIR}/
   cd ${SCRIPTS_DIR}
   git config user.email "admin@example.com"
   git config user.name "Bob"
@@ -369,7 +369,7 @@ if [ ! -d /var/www/rmm ]; then
 fi
 
 webtar="trmm-web-v${WEB_VERSION}.tar.gz"
-wget -q https://github.com/amidaware/tacticalrmm-web/releases/download/v${WEB_VERSION}/${webtar} -O /tmp/${webtar}
+wget -q https://github.com/framatt/tacticalrmm-web/releases/download/v${WEB_VERSION}/${webtar} -O /tmp/${webtar}
 sudo rm -rf /var/www/rmm/dist
 sudo tar -xzf /tmp/${webtar} -C /var/www/rmm
 echo "window._env_ = {PROD_URL: \"https://${API}\"}" | sudo tee /var/www/rmm/dist/env-config.js > /dev/null
